@@ -62,6 +62,10 @@ body {
   color: #e86a5b;
 }
 
+#footer a:hover {
+  color: #de4735;
+}
+
 #sidebar ul {
   list-style-type: none;
 }
