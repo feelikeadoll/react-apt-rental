@@ -21,9 +21,10 @@ body {
 
 #navbar {
   width: 100vw;
-  height: 115px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -31,18 +32,24 @@ body {
 
 #navbar .logo {
   display: flex;
+  padding: 0px 40px 0px 0px;
   margin: 0px 20px 0px 20px;
   font-family: 'Nunito', sans-serif;
+  font-size: 11px;
 }
 
 #logo-img {
-  height: 85px;
+  height: 60px;
   margin: 10px 10px 0px 0px;
 }
 
 #menu-icon {
-  width: 50px;
+  width: 35px;
   margin: 35px;
+}
+
+.sweet-orange {
+  color: #e86a5b;
 }
 
 #footer {

@@ -1,12 +1,12 @@
-import logo from "../assets/logo.png"
+import logo from "../assets/logo-home.png"
 import menu from "../assets/menu.png"
 
 function Navbar(props) {
     return (
         <div id="navbar">
-            <div class="logo">
+            <div className="logo">
                 <img src={logo} alt={"logo"} id="logo-img"/>
-                <h1>{props.name}</h1>
+                <h1>Home <span className ="sweet-orange">Sweet</span> Home</h1>
             </div>
             <div>
                 <img src={menu} alt="menu-icon" id="menu-icon"/>
