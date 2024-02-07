@@ -19,6 +19,13 @@ body {
   background-color: white;
   display: flex;
   justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
 #navbar {
@@ -54,9 +61,12 @@ body {
 #footer {
   background-color: whitesmoke;
   width: 100vw;
+  height: 50px;
   display: flex;
   justify-content: center;
-
+  position: fixed;
+  left: 0;
+  bottom: 0;
   color: #3d4f5d;
   font-family: "Nunito", sans-serif;
   font-weight: 400;
@@ -112,15 +122,19 @@ a:hover {
 .apt-info {
   font-weight: 700;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .apt-details {
   text-align: left;
+  margin-left: 30px;
 }
 
 .apt-img {
   border-radius: 10px;
+  width: 600px;
+  object-fit: cover;
 }
 
 .page {
