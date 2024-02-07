@@ -11,7 +11,7 @@ function ItemDetails() {
     })
 
     return (
-        <div className="ItemDetails">
+        <div className="page">
             <div className="apt-info">
                 <img src={result.picture_url.url} alt={result.name} className="apt-img" />
                 <div className="apt-details">

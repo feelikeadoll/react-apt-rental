@@ -8,7 +8,6 @@ green: #c1bb63
 
 #root {
   max-width: 1280px;
-  
 }
 
 body {
@@ -65,10 +64,22 @@ body {
 
 #footer a {
   color: #e86a5b;
+  text-decoration: none;
 }
 
 #footer a:hover {
   color: #de4735;
+  text-decoration: none;
+}
+
+a {
+  color: #e86a5b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #de4735;
+  text-decoration: none;
 }
 
 #sidebar ul {
@@ -106,8 +117,19 @@ body {
   border-radius: 10px;
 }
 
-.ItemDetails {
+.page {
   background-color: whitesmoke;
   padding: 40px 100px 60px 100px;
   margin-bottom: 100px;
+  text-align: center;
+}
+
+.teams {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.team-member {
+  text-align: center;
+  width: 350px;
 }
