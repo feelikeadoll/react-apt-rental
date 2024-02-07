@@ -87,30 +87,36 @@ a:hover {
 }
 
 .picture {
-  width: 200px;
+  width: 250px;
+  height: 166px;
+  object-fit: cover;
 }
 
 .card {
-  border: 2px solid black;
+  background-color: whitesmoke;
   margin: 10px;
+  padding: 10px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+.card .apt-info {
+  justify-content: space-between;
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .apt-info {
   font-weight: 700;
   display: flex;
-  justify-content: space-between;
-  width: 400px;
-  display: flex;
+  justify-content: space-evenly;
 }
 
 .apt-details {
-  margin-left: 20px;
-  width: 500px;
+  text-align: left;
 }
 
 .apt-img {

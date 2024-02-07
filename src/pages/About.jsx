@@ -2,7 +2,8 @@ function About() {
     return (
         <div className="page">
             {/* project description */}
-            <p>Home Sweet Home was built with React as a mini project during our Web Dev Bootcamp at Ironhack. It simulates a holiday rental website admin page. The team behind this project:</p>
+            <p><b>Home Sweet Home</b> was built with React as a mini project during our Web Development Bootcamp at Ironhack.<br/>
+            It simulates a holiday rental website admin page where you can add and delete rental listings. The team behind this project:</p>
 
             {/* team members  */}
             {/* links to your GitHub and LinkedIn profiles. */}
