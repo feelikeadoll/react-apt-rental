@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export const ListItem = (props) => {
   const [apt, setApt] = useState(props.appartment);
-  console.log(apt);
 
   const handleDeleteButton = () => {
     return props.function(props.appartment.id);
