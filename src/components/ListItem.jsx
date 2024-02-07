@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const ListItem = (props) => {
-  const [apt, setApt] = useState(props.appartment);
 
   const handleDeleteButton = () => {
     return props.function(props.appartment.id);
@@ -11,7 +11,9 @@ export const ListItem = (props) => {
     <div className="card">
       <div>{props.appartment.country}</div>
       <div>{props.appartment.city}</div>
-      <img className="picture" src={props.appartment.picture_url.url} alt="" />
+      <Link to={`/apartments/${props.appartment.id}`}>
+        <img className="picture" src={props.appartment.picture_url.url} alt="" />
+      </Link>
       <div>{props.appartment.property_type}</div>
       <div>{props.appartment.accommodates}</div>
       <div>{props.appartment.price}</div>
@@ -23,7 +25,11 @@ export const ListItem = (props) => {
           <p></p>
         )} */}
       </div>
+      <Link to={`/apartments/${props.appartment.id}`}>
+        <button>More details</button>
+      </Link>
+
       <button onClick={handleDeleteButton}>Delete</button>
-    </div>
+    </div >
   );
 };
