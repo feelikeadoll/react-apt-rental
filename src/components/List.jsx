@@ -1,9 +1,10 @@
-import data from "../data/data.json";
 import { ListItem } from "./ListItem";
 import { useState } from "react";
 
-export const List = () => {
-  const [result, setResult] = useState(data.results);
+export const List = (props) => {
+  //console.log(props.appartments);
+  const [result, setResult] = useState(props.appartments);
+  console.log(result);
 
   function deleteAppartment(id) {
     let filteredList = result.filter((item) => {
@@ -22,5 +23,3 @@ export const List = () => {
   });
   return appartmentsList;
 };
-
-
