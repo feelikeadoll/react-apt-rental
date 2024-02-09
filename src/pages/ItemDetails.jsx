@@ -1,10 +1,10 @@
 import data from "../data/data.json";
 import { useParams } from "react-router-dom";
 
-function ItemDetails() {
+function ItemDetails(props) {
   const { aptId } = useParams();
 
-  const result = data.results.find((element) => {
+  const result = props.appartments.find((element) => {
     return element.id == aptId;
   });
 

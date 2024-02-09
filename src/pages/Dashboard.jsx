@@ -1,8 +1,8 @@
 import { List } from "../components/List";
 import { useState } from "react";
-import data from "../data/data.json";
 
-function Dashboard() {
+function Dashboard(props) {
+  const { appartments, deleteAppartment, updateList } = props;
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [image, setImage] = useState("");
@@ -10,15 +10,6 @@ function Dashboard() {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [property, setProperty] = useState("");
-
-  const [appartments, setAppartments] = useState(data.results);
-
-  function deleteAppartment(id) {
-    let filteredList = appartments.filter((item) => {
-      return item.id !== id;
-    });
-    setAppartments(filteredList);
-  }
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -40,7 +31,7 @@ function Dashboard() {
     };
 
     const newList = [newAppartment, ...appartments];
-    setAppartments(newList);
+    updateList(newList);
 
     setCity("");
     setCountry("");

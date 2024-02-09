@@ -8,21 +8,46 @@ import Dashboard from "./pages/Dashboard";
 import ItemDetails from "./pages/ItemDetails";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import data from "./data/data.json";
+import { useState } from "react";
 
 function App() {
+  const [appartments, setAppartments] = useState(data.results);
+
+  function deleteAppartment(id) {
+    let filteredList = appartments.filter((item) => {
+      return item.id !== id;
+    });
+    setAppartments(filteredList);
+  }
+
+  const updateList = (newList) => {
+    setAppartments(newList);
+  };
+
   return (
     <>
-
       <Navbar name="Home Sweet Home" />
       <Sidebar></Sidebar>
 
-      <Routes >
-        <Route path="/" element={<Dashboard />}></Route>
-        <Route path="/apartments/:aptId" element={<ItemDetails />}></Route>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Dashboard
+              updateList={updateList}
+              appartments={appartments}
+              deleteAppartment={deleteAppartment}
+            />
+          }
+        ></Route>
+        <Route
+          path="/apartments/:aptId"
+          element={<ItemDetails appartments={appartments} />}
+        ></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-
 
       <Footer />
     </>
