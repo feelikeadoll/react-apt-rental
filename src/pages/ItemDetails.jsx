@@ -1,29 +1,33 @@
 import data from "../data/data.json";
-import { useParams } from "react-router-dom"
-
+import { useParams } from "react-router-dom";
 
 function ItemDetails() {
+  const { aptId } = useParams();
 
-    const { aptId } = useParams()
+  const result = data.results.find((element) => {
+    return element.id == aptId;
+  });
 
-    const result = data.results.find((element) => {
-        return element.id == aptId;
-    })
-
-    return (
-        <div className="page">
-            <div className="apt-info">
-                <img src={result.picture_url.url} alt={result.name} className="apt-img" />
-                <div className="apt-details">
-                    <h2>{result.city}, {result.country}</h2>
-                    <h3>{result.name}</h3>
-                    <p>Price: {result.price}€</p>
-                    <p>Accommodates: {result.accommodates}</p>
-                </div>
-            </div>
-            <p>{result.description}</p>
+  return (
+    <div className="page">
+      <div className="apt-info">
+        <img
+          src={result.picture_url.url}
+          alt={result.name}
+          className="apt-img"
+        />
+        <div className="apt-details">
+          <h2>
+            {result.city}, {result.country}
+          </h2>
+          <h3>{result.name}</h3>
+          <p>Price: {result.price}€</p>
+          <p>Accommodates: {result.accommodates}</p>
         </div>
-    )
+      </div>
+      <p>{result.description}</p>
+    </div>
+  );
 }
 
-export default ItemDetails
+export default ItemDetails;

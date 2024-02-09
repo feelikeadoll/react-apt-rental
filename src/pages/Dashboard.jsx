@@ -13,6 +13,13 @@ function Dashboard() {
 
   const [appartments, setAppartments] = useState(data.results);
 
+  function deleteAppartment(id) {
+    let filteredList = appartments.filter((item) => {
+      return item.id !== id;
+    });
+    setAppartments(filteredList);
+  }
+
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
@@ -139,7 +146,7 @@ function Dashboard() {
       </form>
 
       <div className="list">
-        <List appartments={appartments} />
+        <List appartments={appartments} deleteAppartment={deleteAppartment} />
       </div>
     </>
   );
