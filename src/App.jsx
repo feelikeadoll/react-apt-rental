@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import ItemDetails from "./pages/ItemDetails";
 import About from "./pages/About";
+import { EditApartment } from "./pages/EditApartment";
 import NotFound from "./pages/NotFound";
 import data from "./data/data.json";
 import { useState } from "react";
@@ -46,6 +47,12 @@ function App() {
           element={<ItemDetails appartments={appartments} />}
         ></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route
+          path="/apartments/:aptId/edit"
+          element={
+            <EditApartment appartments={appartments} updateList={updateList} />
+          }
+        ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
 

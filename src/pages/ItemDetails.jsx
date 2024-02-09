@@ -1,5 +1,4 @@
-import data from "../data/data.json";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function ItemDetails(props) {
   const { aptId } = useParams();
@@ -26,6 +25,9 @@ function ItemDetails(props) {
         </div>
       </div>
       <p>{result.description}</p>
+      <Link to={`/apartments/${aptId}/edit`}>
+        <button>Edit</button>
+      </Link>
     </div>
   );
 }
