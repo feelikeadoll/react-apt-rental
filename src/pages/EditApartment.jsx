@@ -7,7 +7,7 @@ export const EditApartment = (props) => {
   const result = props.appartments.find((element) => {
     return element.id == aptId;
   });
-  
+
   const [city, setCity] = useState(result.city);
   const [country, setCountry] = useState(result.country);
   const [image, setImage] = useState(result.picture_url.url);
@@ -35,55 +35,58 @@ export const EditApartment = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmitForm}>
-        <label>
-          City:
-          <input
-            name="city"
-            type="text"
-            placeholder="City"
-            value={city}
-            onChange={(e) => {
-              setCity(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Country:
-          <input
-            name="country"
-            type="text"
-            placeholder="Country"
-            value={country}
-            onChange={(e) => {
-              setCountry(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Name:
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }} />
-        </label>
-        <label>
-          Image:
-          <input
-            name="image"
-            type="url"
-            placeholder="Image url"
-            value={image}
-            onChange={(e) => {
-              setImage(e.target.value);
-            }}
-          />
-        </label>
+    <div className="page">
+      <form onSubmit={handleSubmitForm} className="form">
+        <div>
+          <label>
+            City:
+            <input
+              name="city"
+              type="text"
+              placeholder="City"
+              value={city}
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
+            />
+          </label>
+          <label>
+            Country:
+            <input
+              name="country"
+              type="text"
+              placeholder="Country"
+              value={country}
+              onChange={(e) => {
+                setCountry(e.target.value);
+              }}
+            />
+          </label>
+          <label>
+            Name:
+            <input
+              name="name"
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }} />
+          </label>
+          <label>
+            Image:
+            <input
+              name="image"
+              type="url"
+              placeholder="Image url"
+              value={image}
+              onChange={(e) => {
+                setImage(e.target.value);
+              }}
+            />
+          </label>
+        </div>
+        <div>
         <label>
           Property:
           <select
@@ -136,13 +139,14 @@ export const EditApartment = (props) => {
             }}
           />
         </label>
+        </div>
 
         <button type="submit">Edit apartment</button>
       </form>
       <div className={message}>Apartment info changed!</div>
       <Link to={`/apartments/${aptId}`}>
-      <button type="submit">Back to apartment</button>
+        <button type="submit">Back to apartment</button>
       </Link>
-    </div>
+    </div >
   );
 };
