@@ -10,6 +10,7 @@ function Dashboard(props) {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [property, setProperty] = useState("");
+  const [name, setName] = useState("");
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ function Dashboard(props) {
       id: maxId + 1,
       country: country,
       city: city,
+      name: name,
       description: description,
       property_type: property,
       accommodates: capacity,
@@ -68,6 +70,17 @@ function Dashboard(props) {
               setCountry(e.target.value);
             }}
           />
+        </label>
+        <label>
+          Name:
+          <input
+            name="name"
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }} />
         </label>
         <label>
           Image:

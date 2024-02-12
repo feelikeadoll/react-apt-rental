@@ -7,7 +7,7 @@ export const EditApartment = (props) => {
   const result = props.appartments.find((element) => {
     return element.id == aptId;
   });
-  console.log(result);
+  
   const [city, setCity] = useState(result.city);
   const [country, setCountry] = useState(result.country);
   const [image, setImage] = useState(result.picture_url.url);
@@ -15,29 +15,28 @@ export const EditApartment = (props) => {
   const [price, setPrice] = useState(result.price);
   const [description, setDescription] = useState(result.description);
   const [property, setProperty] = useState(result.property_type);
+  const [name, setName] = useState(result.name)
+
+  const [isActive, setIsActive] = useState("container")
+
+  console.log(isActive)
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    const appartmentIds = props.appartments.map((apt) => apt.id);
-    const maxId = Math.max(...appartmentIds);
+    result.city = city;
+    result.country = country;
+    result.picture_url.url = image;
+    result.accommodates = capacity;
+    result.price = price;
+    result.description = description;
+    result.property_type = property;
+    result.name = name;
 
-    const newAppartment = {
-      id: maxId + 1,
-      country: country,
-      city: city,
-      description: description,
-      property_type: property,
-      accommodates: capacity,
-      price: price,
-      picture_url: {
-        url: image,
-      },
-    };
-
-    const newList = [newAppartment, ...props.appartments];
-    props.updateList(newList);
+    setIsActive("active")
   };
+
+  console.log(isActive)
 
   return (
     <div>
@@ -65,6 +64,17 @@ export const EditApartment = (props) => {
               setCountry(e.target.value);
             }}
           />
+        </label>
+        <label>
+          Name:
+          <input
+            name="name"
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }} />
         </label>
         <label>
           Image:
@@ -131,8 +141,12 @@ export const EditApartment = (props) => {
           />
         </label>
 
-        <button type="submit">Add apartment</button>
+        <button type="submit">Edit apartment</button>
       </form>
+      <div className={isActive}>Apartment info changed!</div>
+      <Link to={`/apartments/${aptId}`}>
+      <button type="submit">Back to apartment</button>
+      </Link>
     </div>
   );
 };
