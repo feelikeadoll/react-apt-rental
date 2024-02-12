@@ -119,7 +119,7 @@ a:hover {
 }
 
 #sidebar a:hover {
-  color:#de4735;
+  color: #de4735;
 }
 
 .menu-btn {
@@ -142,6 +142,8 @@ a:hover {
   margin: 10px;
   padding: 10px 20px 20px 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card .apt-info {
@@ -152,6 +154,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 100px;
 }
 
 .apt-info {
@@ -175,7 +178,7 @@ a:hover {
 .page {
   background-color: whitesmoke;
   padding: 40px 100px 60px 100px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -206,6 +209,27 @@ textarea {
   display: none;
 }
 
-.list {
-  padding-bottom: 100px;
+button {
+  background-color: #c1bb63;
+  border: 0px;
+  width: 115px;
+  height: 30px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  border-radius: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons:hover {
+  background-color: #a39c38;
+}
+
+form button:hover {
+  background-color: #a39c38;
 }

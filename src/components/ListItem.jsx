@@ -29,11 +29,13 @@ export const ListItem = (props) => {
           <p></p>
         )}
       </div> */}
-      <Link to={`/apartments/${props.appartment.id}`}>
-        <button>More details</button>
-      </Link>
+      <div className="buttonContainer">
+        <Link to={`/apartments/${props.appartment.id}`}>
+          <button className="buttons">More details</button>
+        </Link>
 
-      <button onClick={handleDeleteButton}>Delete</button>
+        <button onClick={handleDeleteButton} className="buttons">Delete</button>
+      </div>
     </div>
   );
 };
