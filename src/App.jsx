@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
 import { List } from "./components/List";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
@@ -29,7 +28,6 @@ function App() {
   return (
     <>
       <Navbar name="Home Sweet Home" />
-      <Sidebar></Sidebar>
 
       <Routes>
         <Route
