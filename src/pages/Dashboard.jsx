@@ -1,5 +1,6 @@
 import { List } from "../components/List";
 import { useState } from "react";
+import Form from 'react-bootstrap/Form';
 
 function Dashboard(props) {
   const { appartments, deleteAppartment, updateList } = props;
@@ -46,7 +47,7 @@ function Dashboard(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmitForm}>
+      <form onSubmit={handleSubmitForm} className="page" >
         <label>
           City:
           <input
