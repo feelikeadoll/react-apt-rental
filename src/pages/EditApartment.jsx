@@ -17,9 +17,7 @@ export const EditApartment = (props) => {
   const [property, setProperty] = useState(result.property_type);
   const [name, setName] = useState(result.name)
 
-  const [isActive, setIsActive] = useState("container")
-
-  console.log(isActive)
+  const [message, setMessage] = useState("hiddenMsg")
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -33,10 +31,8 @@ export const EditApartment = (props) => {
     result.property_type = property;
     result.name = name;
 
-    setIsActive("active")
+    setMessage("activeMsg")
   };
-
-  console.log(isActive)
 
   return (
     <div>
@@ -143,7 +139,7 @@ export const EditApartment = (props) => {
 
         <button type="submit">Edit apartment</button>
       </form>
-      <div className={isActive}>Apartment info changed!</div>
+      <div className={message}>Apartment info changed!</div>
       <Link to={`/apartments/${aptId}`}>
       <button type="submit">Back to apartment</button>
       </Link>
