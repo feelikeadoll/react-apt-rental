@@ -25,6 +25,13 @@ function App() {
     setAppartments(newList);
   };
 
+  const [favourites, setFavourites] = useState([])
+
+  function handleAddFavourites(apartmentId) {
+    const newList = [apartmentId, ...favourites];
+    setFavourites(newList)
+  }
+
   return (
     <>
       <Navbar name="Home Sweet Home" />
@@ -37,6 +44,7 @@ function App() {
               updateList={updateList}
               appartments={appartments}
               deleteAppartment={deleteAppartment}
+              handleAddFavourites={handleAddFavourites}
             />
           }
         ></Route>

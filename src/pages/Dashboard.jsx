@@ -3,7 +3,7 @@ import { useState } from "react";
 import Form from 'react-bootstrap/Form';
 
 function Dashboard(props) {
-  const { appartments, deleteAppartment, updateList } = props;
+  const { appartments, deleteAppartment, updateList, handleAddFavourites } = props;
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [image, setImage] = useState("");
@@ -157,7 +157,7 @@ function Dashboard(props) {
       </form>
 
       <div className="list">
-        <List appartments={appartments} deleteAppartment={deleteAppartment} />
+        <List appartments={appartments} deleteAppartment={deleteAppartment} handleAddFavourites={handleAddFavourites}/>
       </div>
     </>
   );
