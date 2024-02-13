@@ -13,6 +13,7 @@ function Sidebar(props) {
             <ul>
                 <NavLink to="/"><li>Home</li></NavLink>
                 <NavLink to="/about"><li>About</li></NavLink>
+                <NavLink to="/favourites">Favourites</NavLink>
             </ul>
         </div>
     )

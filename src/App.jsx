@@ -10,6 +10,7 @@ import { EditApartment } from "./pages/EditApartment";
 import NotFound from "./pages/NotFound";
 import data from "./data/data.json";
 import { useState } from "react";
+import Favourites from "./pages/Favourites";
 
 function App() {
   const [appartments, setAppartments] = useState(data.results);
@@ -59,6 +60,7 @@ function App() {
             <EditApartment appartments={appartments} updateList={updateList} />
           }
         ></Route>
+        <Route path="/favourites" element={<Favourites favourites={favourites}/>}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
 
