@@ -7,8 +7,8 @@ function Dashboard(props) {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [image, setImage] = useState("");
-  const [capacity, setCapacity] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [capacity, setCapacity] = useState(1);
+  const [price, setPrice] = useState(1);
   const [description, setDescription] = useState("");
   const [property, setProperty] = useState("");
   const [name, setName] = useState("");
@@ -51,6 +51,7 @@ function Dashboard(props) {
         <label>
           City:
           <input
+            required
             name="city"
             type="text"
             placeholder="City"
@@ -63,6 +64,7 @@ function Dashboard(props) {
         <label>
           Country:
           <input
+            required
             name="country"
             type="text"
             placeholder="Country"
@@ -86,6 +88,7 @@ function Dashboard(props) {
         <label>
           Image:
           <input
+            required
             name="image"
             type="url"
             placeholder="Image url"
@@ -96,8 +99,9 @@ function Dashboard(props) {
           />
         </label>
         <label>
-          Property:
+          Property type:
           <select
+            required
             name="property"
             value={property}
             onChange={(e) => {
@@ -118,6 +122,7 @@ function Dashboard(props) {
             type="number"
             placeholder="Capacity"
             value={capacity}
+            min="1"
             onChange={(e) => {
               setCapacity(e.target.value);
             }}
@@ -130,6 +135,7 @@ function Dashboard(props) {
             type="number"
             placeholder="Price"
             value={price}
+            min="1"
             onChange={(e) => {
               setPrice(e.target.value);
             }}

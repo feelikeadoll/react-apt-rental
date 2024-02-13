@@ -41,6 +41,7 @@ export const EditApartment = (props) => {
           <label>
             City:
             <input
+              required
               name="city"
               type="text"
               placeholder="City"
@@ -53,6 +54,7 @@ export const EditApartment = (props) => {
           <label>
             Country:
             <input
+              required
               name="country"
               type="text"
               placeholder="Country"
@@ -76,6 +78,7 @@ export const EditApartment = (props) => {
           <label>
             Image:
             <input
+              required
               name="image"
               type="url"
               placeholder="Image url"
@@ -87,58 +90,61 @@ export const EditApartment = (props) => {
           </label>
         </div>
         <div>
-        <label>
-          Property:
-          <select
-            name="property"
-            value={property}
-            onChange={(e) => {
-              setProperty(e.target.value);
-            }}
-          >
-            <option value="">-- None --</option>
-            <option value="Apartment">Apartment</option>
-            <option value="Loft">Loft</option>
-            <option value="House">House</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
-        <label>
-          Capacity:
-          <input
-            name="capacity"
-            type="number"
-            placeholder="Capacity"
-            value={capacity}
-            onChange={(e) => {
-              setCapacity(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Price:
-          <input
-            name="price"
-            type="number"
-            placeholder="Price"
-            value={price}
-            onChange={(e) => {
-              setPrice(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Description:
-          <textarea
-            name="description"
-            type="text"
-            placeholder="Description"
-            value={description}
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
-          />
-        </label>
+          <label>
+            Property:
+            <select
+              required
+              name="property"
+              value={property}
+              onChange={(e) => {
+                setProperty(e.target.value);
+              }}
+            >
+              <option value="">-- None --</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Loft">Loft</option>
+              <option value="House">House</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>
+            Capacity:
+            <input
+              name="capacity"
+              type="number"
+              placeholder="Capacity"
+              value={capacity}
+              min="1"
+              onChange={(e) => {
+                setCapacity(e.target.value);
+              }}
+            />
+          </label>
+          <label>
+            Price:
+            <input
+              name="price"
+              type="number"
+              placeholder="Price"
+              value={price}
+              min="1"
+              onChange={(e) => {
+                setPrice(e.target.value);
+              }}
+            />
+          </label>
+          <label>
+            Description:
+            <textarea
+              name="description"
+              type="text"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
+            />
+          </label>
         </div>
 
         <button type="submit">Edit apartment</button>

@@ -34,6 +34,10 @@ h1 {
   align-items: center;
 }
 
+ #navbar .active {
+  color: #e86a5b;
+}
+
 #navbar .logo {
   display: flex;
   padding: 0px 40px 0px 0px;
@@ -131,6 +135,10 @@ a:hover {
   right: 0px;
 }
 
+.menu-btn:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .picture {
   width: 250px;
   height: 166px;
@@ -226,10 +234,6 @@ button {
   justify-content: space-between;
 }
 
-.buttons:hover {
-  background-color: #a39c38;
-}
-
-form button:hover {
+button:hover {
   background-color: #a39c38;
 }

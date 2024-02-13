@@ -31,10 +31,10 @@ export const ListItem = (props) => {
       </div> */}
       <div className="buttonContainer">
         <Link to={`/apartments/${props.appartment.id}`}>
-          <button className="buttons">More details</button>
+          <button >More details</button>
         </Link>
 
-        <button onClick={handleDeleteButton} className="buttons">Delete</button>
+        <button onClick={handleDeleteButton} >Delete</button>
       </div>
     </div>
   );
