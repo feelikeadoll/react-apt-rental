@@ -237,3 +237,14 @@ button {
 button:hover {
   background-color: #a39c38;
 }
+
+.bookmark-btn {
+  position: absolute;
+  width: 30px;
+  right: 10px;
+  top: 10px;
+}
+
+.imgFrame {
+  position: relative;
+}
