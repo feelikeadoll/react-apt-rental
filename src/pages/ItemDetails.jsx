@@ -2,8 +2,10 @@ import { useParams, Link } from "react-router-dom";
 
 function ItemDetails(props) {
   const { aptId } = useParams();
+  console.log("appartment: " + props.appartments[0].id);
 
   const result = props.appartments.find((element) => {
+    console.log("itemDetails" + element.id);
     return element.id == aptId;
   });
 

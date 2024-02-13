@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import bookmark from "../assets/bookmark-1.png"
-
+import bookmark from "../assets/bookmark-1.png";
+import bookmarkUndo from "../assets/bookmark-2.png";
 
 export const ListItem = (props) => {
   const handleDeleteButton = () => {
-    return props.function(props.appartment.id);
+    return props.deleteAppartment(props.appartment.id);
   };
 
   const currentApt = props.appartment;
-  
+
   return (
     <div className="card">
       <h3>
@@ -16,7 +16,18 @@ export const ListItem = (props) => {
         {props.appartment.country}
       </h3>
       <div className="imgFrame">
-        <button onClick={() => {props.handleAddFavourites(currentApt)}} className="menu-btn"><img src={bookmark} className="bookmark-btn" /></button>
+        <button
+          onClick={() => {
+            props.handleAddFavourites(currentApt);
+          }}
+          className="menu-btn"
+        >
+          <img src={bookmark} className="bookmark-btn " />
+          <img
+            src={bookmarkUndo}
+            className={`bookmark-btn ${props.favouriteIcon} `}
+          />
+        </button>
         <Link to={`/apartments/${props.appartment.id}`}>
           <img
             className="picture"
@@ -38,10 +49,10 @@ export const ListItem = (props) => {
       </div> */}
       <div className="buttonContainer">
         <Link to={`/apartments/${props.appartment.id}`}>
-          <button >More details</button>
+          <button>More details</button>
         </Link>
 
-        <button onClick={handleDeleteButton} >Delete</button>
+        <button onClick={handleDeleteButton}>Delete</button>
       </div>
     </div>
   );

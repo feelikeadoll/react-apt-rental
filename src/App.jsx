@@ -15,22 +15,30 @@ import Favourites from "./pages/Favourites";
 function App() {
   const [appartments, setAppartments] = useState(data.results);
 
+  const [favourites, setFavourites] = useState([]);
+  const [favouriteIcon, setFavouriteIcon] = useState("hidden");
+
   function deleteAppartment(id) {
     let filteredList = appartments.filter((item) => {
       return item.id !== id;
     });
+
+    let filteredFavourites = favourites.filter((item) => {
+      return item.id !== id;
+    });
+
     setAppartments(filteredList);
+    setFavourites(filteredFavourites);
   }
 
   const updateList = (newList) => {
     setAppartments(newList);
   };
 
-  const [favourites, setFavourites] = useState([])
-
   function handleAddFavourites(apartmentId) {
     const newList = [apartmentId, ...favourites];
-    setFavourites(newList)
+    setFavourites(newList);
+    setFavouriteIcon("sidebar");
   }
 
   return (
@@ -46,6 +54,7 @@ function App() {
               appartments={appartments}
               deleteAppartment={deleteAppartment}
               handleAddFavourites={handleAddFavourites}
+              favouriteIcon={favouriteIcon}
             />
           }
         ></Route>
@@ -60,7 +69,16 @@ function App() {
             <EditApartment appartments={appartments} updateList={updateList} />
           }
         ></Route>
-        <Route path="/favourites" element={<Favourites favourites={favourites}/>}></Route>
+        <Route
+          path="/favourites"
+          element={
+            <Favourites
+              favourites={favourites}
+              deleteAppartment={deleteAppartment}
+              handleAddFavourites={handleAddFavourites}
+            />
+          }
+        ></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
 

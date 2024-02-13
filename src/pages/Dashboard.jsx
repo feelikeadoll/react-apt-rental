@@ -1,9 +1,15 @@
 import { List } from "../components/List";
 import { useState } from "react";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 
 function Dashboard(props) {
-  const { appartments, deleteAppartment, updateList, handleAddFavourites } = props;
+  const {
+    appartments,
+    deleteAppartment,
+    updateList,
+    handleAddFavourites,
+    favouriteIcon,
+  } = props;
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [image, setImage] = useState("");
@@ -47,7 +53,7 @@ function Dashboard(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmitForm} className="page" >
+      <form onSubmit={handleSubmitForm} className="page">
         <label>
           City:
           <input
@@ -83,7 +89,8 @@ function Dashboard(props) {
             value={name}
             onChange={(e) => {
               setName(e.target.value);
-            }} />
+            }}
+          />
         </label>
         <label>
           Image:
@@ -157,7 +164,12 @@ function Dashboard(props) {
       </form>
 
       <div className="list">
-        <List appartments={appartments} deleteAppartment={deleteAppartment} handleAddFavourites={handleAddFavourites}/>
+        <List
+          appartments={appartments}
+          deleteAppartment={deleteAppartment}
+          handleAddFavourites={handleAddFavourites}
+          favouriteIcon={favouriteIcon}
+        />
       </div>
     </>
   );
