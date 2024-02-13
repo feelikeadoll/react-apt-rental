@@ -39,13 +39,14 @@ function App() {
     const newList = [apartmentId, ...favourites];
     setFavourites(newList);
     setFavouriteIcon("sidebar");
+
   }
 
   function deleteFavourites(id) {
     let filteredList = favourites.filter((item) => {
       return item.id !== id;
     });
-    setFavouriteIcon(filteredList);
+    setFavourites(filteredList);
   }
   return (
     <>

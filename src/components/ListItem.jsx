@@ -7,6 +7,10 @@ export const ListItem = (props) => {
     return props.deleteAppartment(props.appartment.id);
   };
 
+  const handleDeleteFavourites = () => {
+    return props.deleteFavourites(props.appartment.id);
+  };
+
   const currentApt = props.appartment;
 
   return (
@@ -25,14 +29,11 @@ export const ListItem = (props) => {
           <img src={bookmark} className="bookmark-btn " />{" "}
         </button>
         {props.favourites.some((element) => {
-          console.log(element.id === props.appartment.id);
           return element.id === props.appartment.id;
         }) && (
           <button
             className="menu-btn"
-            onClick={() => {
-              props.deleteFavourite(currentApt.id);
-            }}
+            onClick={handleDeleteFavourites}
           >
             <img
               src={bookmarkUndo}

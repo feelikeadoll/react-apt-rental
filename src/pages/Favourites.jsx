@@ -1,6 +1,7 @@
 import { ListItem } from "../components/ListItem";
 
 function Favourites(props) {
+    console.log(props.favourites)
   return (
     <>
       <div className="page">
