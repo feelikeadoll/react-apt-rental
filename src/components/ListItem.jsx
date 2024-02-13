@@ -24,13 +24,14 @@ export const ListItem = (props) => {
         >
           <img src={bookmark} className="bookmark-btn " />
           {props.favourites.some((element) => {
+            console.log(element.id === props.appartment.id);
             return element.id === props.appartment.id;
-          }) && (
+          }) ? (
             <img
               src={bookmarkUndo}
               className={`bookmark-btn ${props.favouriteIcon} `}
             />
-          )}
+          ) : null}
         </button>
         <Link to={`/apartments/${props.appartment.id}`}>
           <img

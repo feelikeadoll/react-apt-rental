@@ -1,7 +1,6 @@
 import { ListItem } from "../components/ListItem";
 
 function Favourites(props) {
-  console.log(props);
   return (
     <>
       <div className="page">
@@ -21,6 +20,7 @@ function Favourites(props) {
                 deleteAppartment={props.deleteAppartment}
                 handleAddFavourites={props.handleAddFavourites}
                 favouriteIcon={props.favouriteIcon}
+                favourites={props.favourites}
               />
             );
           })}
