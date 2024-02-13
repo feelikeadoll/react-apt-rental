@@ -1,6 +1,5 @@
 import { List } from "../components/List";
 import { useState } from "react";
-import Form from "react-bootstrap/Form";
 
 function Dashboard(props) {
   const {
@@ -56,113 +55,127 @@ function Dashboard(props) {
   return (
     <>
       <form onSubmit={handleSubmitForm} className="page">
-        <label>
-          City:
-          <input
-            required
-            name="city"
-            type="text"
-            placeholder="City"
-            value={city}
-            onChange={(e) => {
-              setCity(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Country:
-          <input
-            required
-            name="country"
-            type="text"
-            placeholder="Country"
-            value={country}
-            onChange={(e) => {
-              setCountry(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Name:
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Image:
-          <input
-            required
-            name="image"
-            type="url"
-            placeholder="Image url"
-            value={image}
-            onChange={(e) => {
-              setImage(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Property type:
-          <select
-            required
-            name="property"
-            value={property}
-            onChange={(e) => {
-              setProperty(e.target.value);
-            }}
-          >
-            <option value="">-- None --</option>
-            <option value="Apartment">Apartment</option>
-            <option value="Loft">Loft</option>
-            <option value="House">House</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
-        <label>
-          Capacity:
-          <input
-            name="capacity"
-            type="number"
-            placeholder="Capacity"
-            value={capacity}
-            min="1"
-            onChange={(e) => {
-              setCapacity(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Price:
-          <input
-            name="price"
-            type="number"
-            placeholder="Price"
-            value={price}
-            min="1"
-            onChange={(e) => {
-              setPrice(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Description:
-          <textarea
-            name="description"
-            type="text"
-            placeholder="Description"
-            value={description}
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
-          />
-        </label>
+        <div className="form">
+          <div className="formContent">
+            <label>
+              City:
+              <input
+                required
+                name="city"
+                type="text"
+                placeholder="City"
+                value={city}
+                onChange={(e) => {
+                  setCity(e.target.value);
+                }}
+              />
+            </label>
+            <br />
+            <label>
+              Country:
+              <input
+                required
+                name="country"
+                type="text"
+                placeholder="Country"
+                value={country}
+                onChange={(e) => {
+                  setCountry(e.target.value);
+                }}
+              />
+            </label>
+            <br />
+            <label>
+              Name:
+              <input
+                name="name"
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div className="formContent">
+            <label>
+              Image:
+              <input
+                required
+                name="image"
+                type="url"
+                placeholder="Image url"
+                value={image}
+                onChange={(e) => {
+                  setImage(e.target.value);
+                }}
+              />
+            </label>
+            <br />
+            <label>
+              Property type:
+              <select
+                required
+                name="property"
+                value={property}
+                onChange={(e) => {
+                  setProperty(e.target.value);
+                }}
+              >
+                <option value="">-- None --</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Loft">Loft</option>
+                <option value="House">House</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <br />
+            <label>
+              Capacity:
+              <input
+                name="capacity"
+                type="number"
+                placeholder="Capacity"
+                value={capacity}
+                min="1"
+                onChange={(e) => {
+                  setCapacity(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div className="formContent">
+            <label>
+              Price:
+              <input
+                name="price"
+                type="number"
+                placeholder="Price"
+                value={price}
+                min="1"
+                onChange={(e) => {
+                  setPrice(e.target.value);
+                }}
+              />
+            </label>
+            <br />
+            <label>
+              Description:
+              <textarea
+                name="description"
+                type="text"
+                placeholder="Description"
+                value={description}
+                onChange={(e) => {
+                  setDescription(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+        </div>
         <button type="submit">Add apartment</button>
+
       </form>
 
       <div className="list">

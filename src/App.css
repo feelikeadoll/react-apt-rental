@@ -95,8 +95,8 @@ a:hover {
   background-color: #3d4f5d;
   top: 0px;
   right: 0px;
-  width: 200px;
-  height: 100vh;
+  width: 220px;
+  height: 280px;
 }
 
 .hidden {
@@ -242,4 +242,53 @@ button:hover {
 
 .imgFrame {
   position: relative;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 20px;
+}
+label {
+  width: 250px;
+  font-size: 16px;
+  font-weight: 700;
+}
+input, select {
+  margin-left: 10px;
+  border: 1px solid #3d4f5d;
+  height: 25px;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+}
+
+select {
+  height: 35px;
+  width: 260px;
+}
+
+textarea {
+  margin-left: 10px;
+  border: 1px solid #3d4f5d;
+  height: 110px;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+}
+
+.bigger-btn {
+  width: 150px;
+}
+
+.confirmation {
+  height: 26px;
 }

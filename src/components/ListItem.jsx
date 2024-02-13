@@ -26,7 +26,7 @@ export const ListItem = (props) => {
           }}
           className="menu-btn"
         >
-          <img src={bookmark} className="bookmark-btn " />{" "}
+          <img src={bookmark} className="bookmark-btn "/>
         </button>
         {props.favourites.some((element) => {
           return element.id === props.appartment.id;
