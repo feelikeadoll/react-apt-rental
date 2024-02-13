@@ -10,6 +10,7 @@ export const List = (props) => {
         deleteAppartment={props.deleteAppartment}
         handleAddFavourites={props.handleAddFavourites}
         favouriteIcon={props.favouriteIcon}
+        favourites={props.favourites}
       />
     );
   });

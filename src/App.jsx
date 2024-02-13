@@ -55,6 +55,7 @@ function App() {
               deleteAppartment={deleteAppartment}
               handleAddFavourites={handleAddFavourites}
               favouriteIcon={favouriteIcon}
+              favourites={favourites}
             />
           }
         ></Route>
@@ -75,6 +76,7 @@ function App() {
             <Favourites
               favourites={favourites}
               deleteAppartment={deleteAppartment}
+              favouriteIcon={favouriteIcon}
               handleAddFavourites={handleAddFavourites}
             />
           }

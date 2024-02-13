@@ -23,10 +23,14 @@ export const ListItem = (props) => {
           className="menu-btn"
         >
           <img src={bookmark} className="bookmark-btn " />
-          <img
-            src={bookmarkUndo}
-            className={`bookmark-btn ${props.favouriteIcon} `}
-          />
+          {props.favourites.some((element) => {
+            return element.id === props.appartment.id;
+          }) && (
+            <img
+              src={bookmarkUndo}
+              className={`bookmark-btn ${props.favouriteIcon} `}
+            />
+          )}
         </button>
         <Link to={`/apartments/${props.appartment.id}`}>
           <img

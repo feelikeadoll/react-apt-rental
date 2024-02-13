@@ -9,6 +9,7 @@ function Dashboard(props) {
     updateList,
     handleAddFavourites,
     favouriteIcon,
+    favourites,
   } = props;
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
@@ -169,6 +170,7 @@ function Dashboard(props) {
           deleteAppartment={deleteAppartment}
           handleAddFavourites={handleAddFavourites}
           favouriteIcon={favouriteIcon}
+          favourites={favourites}
         />
       </div>
     </>

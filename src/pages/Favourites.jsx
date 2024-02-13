@@ -20,6 +20,7 @@ function Favourites(props) {
                 appartment={element}
                 deleteAppartment={props.deleteAppartment}
                 handleAddFavourites={props.handleAddFavourites}
+                favouriteIcon={props.favouriteIcon}
               />
             );
           })}
