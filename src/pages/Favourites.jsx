@@ -21,6 +21,7 @@ function Favourites(props) {
                 handleAddFavourites={props.handleAddFavourites}
                 favouriteIcon={props.favouriteIcon}
                 favourites={props.favourites}
+                deleteFavourites={props.deleteFavourites}
               />
             );
           })}

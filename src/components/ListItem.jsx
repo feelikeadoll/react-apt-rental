@@ -22,17 +22,25 @@ export const ListItem = (props) => {
           }}
           className="menu-btn"
         >
-          <img src={bookmark} className="bookmark-btn " />
-          {props.favourites.some((element) => {
-            console.log(element.id === props.appartment.id);
-            return element.id === props.appartment.id;
-          }) ? (
+          <img src={bookmark} className="bookmark-btn " />{" "}
+        </button>
+        {props.favourites.some((element) => {
+          console.log(element.id === props.appartment.id);
+          return element.id === props.appartment.id;
+        }) && (
+          <button
+            className="menu-btn"
+            onClick={() => {
+              props.deleteFavourite(currentApt.id);
+            }}
+          >
             <img
               src={bookmarkUndo}
               className={`bookmark-btn ${props.favouriteIcon} `}
-            />
-          ) : null}
-        </button>
+            />{" "}
+          </button>
+        )}
+
         <Link to={`/apartments/${props.appartment.id}`}>
           <img
             className="picture"

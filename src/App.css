@@ -6,10 +6,6 @@ green: #c1bb63
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap");
 
-#root {
-  max-width: 1280px;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -34,7 +30,7 @@ h1 {
   align-items: center;
 }
 
- #navbar .active {
+#navbar .active {
   color: #e86a5b;
 }
 
@@ -207,7 +203,6 @@ input {
 textarea {
   background-color: white;
 }
-
 
 .activeMsg {
   display: block;

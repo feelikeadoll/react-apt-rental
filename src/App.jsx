@@ -41,6 +41,12 @@ function App() {
     setFavouriteIcon("sidebar");
   }
 
+  function deleteFavourites(id) {
+    let filteredList = favourites.filter((item) => {
+      return item.id !== id;
+    });
+    setFavouriteIcon(filteredList);
+  }
   return (
     <>
       <Navbar name="Home Sweet Home" />
@@ -56,6 +62,7 @@ function App() {
               handleAddFavourites={handleAddFavourites}
               favouriteIcon={favouriteIcon}
               favourites={favourites}
+              deleteFavourites={deleteFavourites}
             />
           }
         ></Route>
@@ -78,6 +85,7 @@ function App() {
               deleteAppartment={deleteAppartment}
               favouriteIcon={favouriteIcon}
               handleAddFavourites={handleAddFavourites}
+              deleteFavourites={deleteFavourites}
             />
           }
         ></Route>
