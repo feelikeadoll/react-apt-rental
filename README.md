@@ -1,8 +1,11 @@
-# React + Vite
+# Home Sweet Home
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+<a href="https://home-sweet-home-apt-rental.netlify.app">Home Sweet Home</a> simulates the admin page of a holiday rental website where you can add and delete apartment listings and even bookmark your favourites.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with React, it is a mini project from the Web Development Bootcamp we coursed at Ironhack.
+
+## Team
+
+By <a href="https://github.com/EazyErik">Erik Busch</a> and <a href="https://github.com/feelikeadoll">Laia Navalón</a>.
